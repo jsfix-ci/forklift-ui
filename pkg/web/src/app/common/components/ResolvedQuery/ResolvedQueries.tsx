@@ -103,6 +103,8 @@ export const ResolvedQueries: React.FunctionComponent<IResolvedQueriesProps> = (
                   ) : null}
                   {(result.error as Response).status
                     ? `${(result.error as Response).status}: ${
+                        /* TODO: JSFIX could not patch the breaking change:
+                        Response.statusText no longer sets a default message derived from the HTTP status code*/
                         (result.error as Response).statusText
                       }`
                     : null}
@@ -116,5 +118,5 @@ export const ResolvedQueries: React.FunctionComponent<IResolvedQueriesProps> = (
         children
       )}
     </>
-  );
+  )
 };
